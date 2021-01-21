@@ -22,7 +22,6 @@ ax[0].imshow(pixels[:,:,nonvoid[idx]])
 imgray = pixels[:,:,nonvoid[idx]].astype(np.uint8)
 
 contours, _ = cv.findContours(imgray, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
-
 mask = np.zeros(imgray.shape, np.uint8)
 im2 = cv.UMat(imgray)
 cv.drawContours(mask, contours, -1, 255, 1)
